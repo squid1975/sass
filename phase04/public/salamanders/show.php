@@ -13,7 +13,13 @@ $page_title = 'View Salamander';
 include(SHARED_PATH . '/salamander-header.php'); 
 
 ?>
+  <div class="attributes">
+    <p>ID:<?php echo h($salamander['id']); ?></p>
+    <p>Name:<?php echo h($salamander['name']); ?></p>
+    <p>Habitat:<?php echo h($salamander['habitat']); ?></p>
+    <p>Description:<?php echo h($salamander['description']); ?></p>
 
+  </div>  
 
   <a href="<?= url_for('/salamanders/index.php'); ?>">&laquo; Back to List</a>
 
