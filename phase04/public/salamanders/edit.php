@@ -26,13 +26,13 @@ if(is_post_request()){
 <div id="content">
  <h1>Edit Salamander</h1>
     <form action="<?php echo url_for('salamanders/edit.php?id='. h(u($id))); ?>" method="post">
-        <label for="name">
+        <label for="name">Name</label>
         <input type="text" name="name" value="<?php echo h($salamander['name']); ?>"><br>
 
-        <label for="habitat">
+        <label for="habitat">Habitat</label>
         <input type="text" name="habitat" value="<?php echo h($salamander['habitat']); ?>"><br>
 
-        <label for="description">
+        <label for="description">Description</label>
         <input type="text" name="description" value="<?php echo h($salamander['description']); ?>"><br>
 
         <input type="submit" value="Edit salamander">
