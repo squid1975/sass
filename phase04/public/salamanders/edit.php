@@ -7,7 +7,37 @@ if(!isset($_GET['id'])) {
 }
 $id = $_GET['id'];
 
-$salamander = find_salamander_by_id($id);
+if(is_post_request()){
+
+    $salamander = [];
+    $salamander['name'] = $_POST['name'] ?? '';
+    $salamander['habitat'] = $_POST['habitat'] ?? '';
+    $salamander['description'] = $_POST['description'] ?? '';
+
+    $sql = "UPDATE salamanders SET ";
+    $sql .= "name='" . $salamander['name'] ."', ";
+    $sql .= "habitat='" . $salamander['habitat'] ."', ";
+    $sql .= "description='" . $salamander['description'] ."' ";
+    $sql .= "WHERE id='" . $id ."'";
+    $sql .= "LIMIT 1";
+
+    $result = mysqli_query($db, $sql);
+    // update : results are true/false
+
+    if($result){
+        redirect_to(url_for('salamanders/show.php?id=' . $id));
+    } else {
+        // UPDATE failed 
+        echo mysqli_error($db);
+        db_disconnect($db);
+        exit;
+    }
+
+} else {
+    $salamander = find_salamander_by_id($id);
+}
+
+?>
 <div id="content">
  <h1>Edit Salamander</h1>
     <form action="<?php echo url_for('salamanders/edit.php?id='. h(u($id))); ?>" method="post">
