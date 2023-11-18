@@ -46,7 +46,7 @@ function insert_salamander($name, $habitat, $description) {
 
 function update_salamander($salamander) {
     global $db;
-    $sql = "UPDATE salamanders SET ";
+    $sql = "UPDATE salamander SET ";
     $sql .= "name='" . $salamander['name'] ."', ";
     $sql .= "habitat='" . $salamander['habitat'] ."', ";
     $sql .= "description='" . $salamander['description'] ."' ";
