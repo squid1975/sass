@@ -57,7 +57,7 @@ function update_salamander($salamander) {
     // update : results are true/false
 
     if($result){
-        redirect_to(url_for('salamanders/show.php?id=' . $id));
+        return true;
     } else {
         // UPDATE failed 
         echo mysqli_error($db);
