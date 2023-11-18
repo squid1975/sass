@@ -20,3 +20,26 @@ function find_salamander_by_id($id){
     return $salamander;
     //returns assoc array
 }
+
+function insert_salamander($name, $habitat, $description) {
+    global $db;
+
+    $sql = "INSERT INTO salamanders ";
+    $sql .= "(name, habitat, description) ";
+    $sql .= "VALUES (";
+    $sql .= "'" . $name . "',";
+    $sql .= "'" . $habitat . "',";
+    $sql .= "'" . $description . "'";
+    $sql .= ")";
+    $result = mysqli_query($db, $sql);
+    // For insert statements, $result is true/false
+    if($result){
+        return true;
+    } else {
+        //INSERT failed
+        echo mysqli_error($db);
+        db_disconnect();
+        exit;
+    }
+    
+}
