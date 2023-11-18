@@ -9,7 +9,7 @@ if(is_post_request()){
     $habitat = $_POST['habitat'] ?? '';
     $description = $_POST['description'] ?? '';
 
-    $result = insert_subject($name, $habitat, $description);
+    $result = insert_salamander($name, $habitat, $description);
     $new_id = mysqli_insert_id($db);
     redirect_to(url_for('salamanders/show.php?id=' . $new_id));
 } else {
