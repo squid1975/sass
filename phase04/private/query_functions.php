@@ -11,7 +11,7 @@ function find_all_salamanders() {
 
 function find_salamander_by_id($id){
     global $db;
-    $sql = "SELECT * FROM salamanders ";
+    $sql = "SELECT * FROM salamander ";
     $sql .= "WHERE id='". $id ."'";
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
@@ -24,7 +24,7 @@ function find_salamander_by_id($id){
 function insert_salamander($name, $habitat, $description) {
     global $db;
 
-    $sql = "INSERT INTO salamanders ";
+    $sql = "INSERT INTO salamander ";
     $sql .= "(name, habitat, description) ";
     $sql .= "VALUES (";
     $sql .= "'" . $name . "',";
