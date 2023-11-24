@@ -20,6 +20,8 @@ if(is_post_request()){
 
 } else {
     $salamander = find_salamander_by_id($id);
+    $salamander_set = mysqli_num_rows($salamander_set);
+    mysqli_free_result($salamander_set);
 }
 
 ?>
@@ -39,5 +41,5 @@ if(is_post_request()){
 
     </form>
 </div>
-
+<?php 
 include(SHARED_PATH . '/salamander-footer.php'); ?>
