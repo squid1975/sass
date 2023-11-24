@@ -1,6 +1,6 @@
 <?php require_once('../../private/initialize.php'); 
 include(SHARED_PATH . '/salamander-header.php');
-
+?>
 <div id="content">
     <div class="new">
         <h1>Create Salamander</h1>
@@ -19,5 +19,5 @@ include(SHARED_PATH . '/salamander-header.php');
     </div>
     <a href="<?php echo url_for('salamanders/index.php'); ?>">&laquo; Back to Salamanders</a>
 </div>
-
+<?php
 include(SHARED_PATH . '/salamander-footer.php'); ?>
